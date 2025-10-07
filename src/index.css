@@ -1,0 +1,156 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 0 0% 10%;          /* #1A1A1A - fond principal sombre */
+    --foreground: 0 0% 100%;         /* #FFFFFF - texte principal blanc */
+
+    --card: 0 0% 15%;                /* #262626 - conteneurs */
+    --card-foreground: 0 0% 100%;
+
+    --popover: 0 0% 15%;
+    --popover-foreground: 0 0% 100%;
+
+    /* Orange brand colors based on the provided images */
+    --primary: 25 100% 50%;          /* #FF6600 - orange principal */
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 25 100% 60%;      /* orange plus clair pour les effets */
+    --primary-dark: 25 100% 40%;     /* orange plus foncé */
+
+    --secondary: 0 0% 15%;            /* #262626 - surfaces secondaires */
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 90%;    /* #E6E6E6 - texte secondaire plus clair */
+
+    --accent: 0 0% 15%;              /* conteneurs d'accent */
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 0% 20%;             /* bordures subtiles */
+    --input: 0 0% 15%;
+    --ring: 25 100% 50%;
+
+    /* Custom brand tokens */
+    --shadow-primary: 0 10px 30px -10px hsl(var(--primary) / 0.35);
+    --shadow-glow: 0 0 40px hsl(var(--primary-glow) / 0.45);
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 0 0% 15%;
+
+    --sidebar-foreground: 0 0% 100%;
+
+    --sidebar-primary: 25 100% 50%;
+
+    --sidebar-primary-foreground: 0 0% 100%;
+
+    --sidebar-accent: 0 0% 20%;
+
+    --sidebar-accent-foreground: 0 0% 100%;
+
+    --sidebar-border: 0 0% 20%;
+
+    --sidebar-ring: 25 100% 50%;
+  }
+
+  .dark {
+    --background: 0 0% 10%;          /* #1A1A1A - fond principal sombre */
+    --foreground: 0 0% 100%;         /* #FFFFFF - texte principal blanc */
+
+    --card: 0 0% 15%;                /* #262626 - conteneurs */
+    --card-foreground: 0 0% 100%;
+
+    --popover: 0 0% 15%;
+    --popover-foreground: 0 0% 100%;
+
+    --primary: 25 100% 50%;          /* #FF6600 - orange principal */
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 25 100% 60%;
+    --primary-dark: 25 100% 40%;
+
+    --secondary: 0 0% 15%;            /* #262626 - surfaces secondaires */
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 90%;    /* #E6E6E6 - texte secondaire plus clair */
+
+    --accent: 0 0% 15%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 0% 20%;
+    --input: 0 0% 15%;
+    --ring: 25 100% 50%;
+    --sidebar-background: 0 0% 15%;
+    --sidebar-foreground: 0 0% 100%;
+    --sidebar-primary: 25 100% 50%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 0 0% 20%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 0 0% 20%;
+    --sidebar-ring: 25 100% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  /* Animation pour le carrousel */
+  @keyframes scroll-slow {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  .animate-scroll-slow {
+    animation: scroll-slow 15s linear infinite;
+    width: calc(200% + 2rem);
+  }
+
+  .hover\:pause-animation:hover {
+    animation-play-state: paused;
+  }
+
+  /* Styles personnalisés pour le nouveau design */
+  .bg-gradient-dark {
+    background: linear-gradient(135deg, hsl(0 0% 10%) 0%, hsl(0 0% 8%) 100%);
+  }
+
+  .text-gradient-orange {
+    background: linear-gradient(135deg, hsl(25 100% 50%) 0%, hsl(25 100% 60%) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .border-gradient-orange {
+    border: 1px solid hsl(25 100% 50% / 0.3);
+  }
+
+  .shadow-orange-glow {
+    box-shadow: 0 0 20px hsl(25 100% 50% / 0.3);
+  }
+}
