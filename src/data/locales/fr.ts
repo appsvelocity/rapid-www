@@ -18,8 +18,8 @@ const fr: Translation = {
   'nav.whoWeAre': 'Qui sommes nous ?',
 
   // Hero Section
-  'hero.title': "Transformez votre entreprise avec l'",
-  'hero.title.highlight': 'Intelligence Artificielle',
+  'hero.title': "Transformez votre entreprise avec",
+  'hero.title.highlight': 'l\'Intelligence Artificielle',
   'hero.subtitle': 'Conseil stratégique, développement d\'agents IA sur-mesure et automatisation intelligente de vos processus métiers',
   'hero.promise': 'Résultats mesurables • Souveraineté des données • Expertise depuis 1999',
   'hero.cta.primary': 'Discutons de votre projet →',
