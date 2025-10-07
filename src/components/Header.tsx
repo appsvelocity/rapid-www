@@ -22,7 +22,7 @@ export const Header = () => {
       const firstPart = pathParts[1] || '';
       
       // Vérifier si le premier segment est une langue (2 lettres)
-      const supportedLanguages = ['en', 'fr', 'pt', 'es', 'de', 'it'];
+      const supportedLanguages = ['en', 'fr'];
       const currentLang = supportedLanguages.includes(firstPart) ? firstPart : '';
       
       // Construire le chemin vers la page d'accueil
@@ -58,7 +58,7 @@ export const Header = () => {
               const firstPart = pathParts[1] || '';
               
               // Vérifier si le premier segment est une langue (2 lettres)
-              const supportedLanguages = ['en', 'fr', 'pt', 'es', 'de', 'it'];
+              const supportedLanguages = ['en', 'fr'];
               const currentLang = supportedLanguages.includes(firstPart) ? firstPart : '';
               
               // Construire le chemin vers la page d'accueil
@@ -127,9 +127,23 @@ export const Header = () => {
             </Button>
           </nav>
 
-          {/* Language Selector and Mobile Menu */}
+          {/* Language Selector, RDV Button and Mobile Menu */}
           <div className="flex items-center gap-4">
             <LanguageSelector />
+            
+            {/* RDV Button */}
+            <Button
+              asChild
+              className="bg-orange-500 hover:bg-orange-600 text-white font-semibold px-4 py-2 rounded-lg"
+            >
+              <a 
+                href="https://cal.com/appsvelocity" 
+                target="_blank" 
+                rel="noopener noreferrer"
+              >
+                {t('hero.cta.secondary')}
+              </a>
+            </Button>
             
             {/* Mobile Menu Button */}
             <Button
@@ -192,6 +206,20 @@ export const Header = () => {
                 className={`justify-start ${location.pathname.includes('/about') ? 'text-primary font-semibold' : 'text-foreground hover:text-primary'}`}
               >
                 {t('nav.whoWeAre')}
+              </Button>
+              
+              {/* RDV Button in Mobile Menu */}
+              <Button
+                asChild
+                className="justify-start bg-orange-500 hover:bg-orange-600 text-white font-semibold mt-2"
+              >
+                <a 
+                  href="https://cal.com/appsvelocity" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                >
+                  {t('hero.cta.secondary')}
+                </a>
               </Button>
             </div>
           </nav>

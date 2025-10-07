@@ -17,7 +17,7 @@ const LanguageRouter: React.FC = () => {
     const langFromPath = path.split('/')[1];
     
     // Liste des langues supportées
-    const supportedLanguages = ['en', 'fr', 'pt', 'es', 'de', 'it'];
+    const supportedLanguages = ['en', 'fr'];
     
     if (langFromPath && supportedLanguages.includes(langFromPath)) {
       // Si la langue dans l'URL est différente de la langue actuelle, la changer
@@ -29,7 +29,7 @@ const LanguageRouter: React.FC = () => {
       if (currentLanguage !== 'en') {
         changeLanguage('en');
       }
-    } else if (path.startsWith('/fr/') || path.startsWith('/pt/') || path.startsWith('/es/') || path.startsWith('/de/') || path.startsWith('/it/')) {
+    } else if (path.startsWith('/fr/')) {
       // Si on est sur une page avec préfixe de langue, détecter la langue depuis l'URL
       const langFromPath = path.split('/')[1];
       if (supportedLanguages.includes(langFromPath) && langFromPath !== currentLanguage) {
@@ -43,42 +43,22 @@ const LanguageRouter: React.FC = () => {
       {/* Routes pour chaque langue */}
       <Route path="/" element={<Index />} />
       <Route path="/fr" element={<Index />} />
-      <Route path="/pt" element={<Index />} />
-      <Route path="/es" element={<Index />} />
-      <Route path="/de" element={<Index />} />
-      <Route path="/it" element={<Index />} />
       
       {/* Routes pour les mentions légales */}
       <Route path="/legals" element={<LegalPage />} />
       <Route path="/fr/legals" element={<LegalPage />} />
-      <Route path="/pt/legals" element={<LegalPage />} />
-      <Route path="/es/legals" element={<LegalPage />} />
-      <Route path="/de/legals" element={<LegalPage />} />
-      <Route path="/it/legals" element={<LegalPage />} />
       
       {/* Routes pour les CGV */}
       <Route path="/cgv" element={<CGVPage />} />
       <Route path="/fr/cgv" element={<CGVPage />} />
-      <Route path="/pt/cgv" element={<CGVPage />} />
-      <Route path="/es/cgv" element={<CGVPage />} />
-      <Route path="/de/cgv" element={<CGVPage />} />
-      <Route path="/it/cgv" element={<CGVPage />} />
       
       {/* Routes pour la page About */}
       <Route path="/about" element={<AboutPage />} />
       <Route path="/fr/about" element={<AboutPage />} />
-      <Route path="/pt/about" element={<AboutPage />} />
-      <Route path="/es/about" element={<AboutPage />} />
-      <Route path="/de/about" element={<AboutPage />} />
-      <Route path="/it/about" element={<AboutPage />} />
       
       {/* Routes pour la page de contact */}
       <Route path="/contact" element={<ContactFormPage />} />
       <Route path="/fr/contact" element={<ContactFormPage />} />
-      <Route path="/pt/contact" element={<ContactFormPage />} />
-      <Route path="/es/contact" element={<ContactFormPage />} />
-      <Route path="/de/contact" element={<ContactFormPage />} />
-      <Route path="/it/contact" element={<ContactFormPage />} />
       
       {/* Redirection par défaut */}
       <Route path="*" element={<Navigate to="/" replace />} />

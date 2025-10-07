@@ -2,6 +2,3 @@ User-agent: *
 Allow: /
 
 Sitemap: https://rapid.appsvelocity.com/sitemap.xml
-
-# Hreflang sitemap
-Sitemap: https://rapid.appsvelocity.com/sitemap-hreflang.xml

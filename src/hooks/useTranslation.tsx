@@ -5,10 +5,6 @@ import type { Language } from '@/types';
 export const languages: Language[] = [
   { code: 'en', name: 'English', flag: '🇺🇸' },
   { code: 'fr', name: 'Français', flag: '🇫🇷' },
-  { code: 'pt', name: 'Português', flag: '🇵🇹' },
-  { code: 'es', name: 'Español', flag: '🇪🇸' },
-  { code: 'de', name: 'Deutsch', flag: '🇩🇪' },
-  { code: 'it', name: 'Italiano', flag: '🇮🇹' },
 ];
 
 type TranslationContextValue = {
@@ -61,10 +57,6 @@ export const TranslationProvider = ({ children }: { children: React.ReactNode })
     const ogLocaleMap: Record<string, string> = {
       en: 'en_US',
       fr: 'fr_FR',
-      pt: 'pt_PT',
-      es: 'es_ES',
-      de: 'de_DE',
-      it: 'it_IT',
     };
     const ogLocale = ogLocaleMap[currentLanguage] || 'en_US';
     setMeta('meta[property="og:locale"]', ogLocale);

@@ -1,13 +1,14 @@
 import { useEffect } from 'react';
 import { Header } from '@/components/Header';
 import { HeroSection } from '@/components/HeroSection';
-import { AboutSection } from '@/components/AboutSection';
-import { FeaturesSection } from '@/components/FeaturesSection';
+import { FoundersSection } from '@/components/FoundersSection';
+import { ExpertiseSection } from '@/components/ExpertiseSection';
+import { RapidSection } from '@/components/RapidSection';
+import { SecuritySection } from '@/components/SecuritySection';
 import { ProcessSection } from '@/components/ProcessSection';
-import { ImageCarousel } from '@/components/ImageCarousel';
-import { TestimonialsSection } from '@/components/TestimonialsSection';
-import { PricingSection } from '@/components/PricingSection';
-import { FAQSection } from '@/components/FAQSection';
+import { PodcastsSection } from '@/components/PodcastsSection';
+import { ResultsSection } from '@/components/ResultsSection';
+import { FinalCTASection } from '@/components/FinalCTASection';
 import { Footer } from '@/components/Footer';
 
 const Index = () => {
@@ -34,13 +35,14 @@ const Index = () => {
       <Header />
       <main>
         <HeroSection />
-        <AboutSection />
-        <FeaturesSection />
+        <FoundersSection />
+        <ExpertiseSection />
+        <RapidSection />
+        <SecuritySection />
         <ProcessSection />
-        <ImageCarousel />
-        <TestimonialsSection />
-        <PricingSection />
-        <FAQSection />
+        <PodcastsSection />
+        <ResultsSection />
+        <FinalCTASection />
       </main>
       <Footer />
     </div>

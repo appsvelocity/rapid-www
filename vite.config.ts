@@ -24,10 +24,6 @@ export default defineConfig(({ mode }) => ({
       input: {
         main: path.resolve(__dirname, 'index.html'),
         fr: path.resolve(__dirname, 'fr.html'),
-        pt: path.resolve(__dirname, 'pt.html'),
-        es: path.resolve(__dirname, 'es.html'),
-        de: path.resolve(__dirname, 'de.html'),
-        it: path.resolve(__dirname, 'it.html'),
       },
     },
   },

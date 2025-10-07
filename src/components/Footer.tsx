@@ -1,6 +1,6 @@
 import { useTranslation } from '@/hooks/useTranslation';
 import { Button } from '@/components/ui/button';
-import { Brain, ArrowRight } from 'lucide-react';
+import { Brain, ArrowRight, Mail, Phone, MapPin } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 
 export const Footer = () => {
@@ -49,38 +49,68 @@ export const Footer = () => {
         </div>
       </section>
 
-      {/* Agency Section */}
+      {/* Footer Content */}
       <section className="py-20 border-t border-border">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl lg:text-5xl font-bold mb-6">
-              {t('footer.agency.title')}
-            </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              {t('footer.agency.desc')}
-            </p>
-          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+            {/* Apps Velocity */}
+            <div>
+              <h4 className="text-lg font-semibold mb-6 text-primary">{t('footer.agency.title')}</h4>
+              <p className="text-muted-foreground mb-6 leading-relaxed">
+                {t('footer.agency.desc')}
+              </p>
+              <div className="space-y-3">
+                <div className="flex items-center gap-3">
+                  <Mail className="w-4 h-4 text-primary" />
+                  <span className="text-sm">{t('footer.contact.email')}</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <Phone className="w-4 h-4 text-primary" />
+                  <span className="text-sm">{t('footer.contact.phone')}</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <MapPin className="w-4 h-4 text-primary" />
+                  <span className="text-sm">{t('footer.contact.address')}</span>
+                </div>
+              </div>
+            </div>
 
-          <div className="text-center space-y-4">
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button 
-                variant="cta" 
-                size="lg"
-                onClick={() => scrollToSection('pricing')}
-                className="text-base px-8 py-6 h-auto"
-              >
-                {t('hero.cta.primary')}
-              </Button>
-              
-              <a 
-                href="https://cal.com/appsvelocity" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-base font-medium ring-offset-background transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 border border-primary/30 bg-background text-primary hover:bg-primary/10 hover:border-primary/50 px-8 py-6 h-auto group"
-              >
-                {t('hero.cta.secondary')}
-                <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
-              </a>
+            {/* Services */}
+            <div>
+              <h4 className="text-lg font-semibold mb-6 text-primary">{t('footer.services.title')}</h4>
+              <ul className="space-y-3">
+                <li><a href="#expertise" className="text-sm text-muted-foreground hover:text-primary transition-colors">Conseil Stratégique IA</a></li>
+                <li><a href="#expertise" className="text-sm text-muted-foreground hover:text-primary transition-colors">Agents IA sur-mesure</a></li>
+                <li><a href="#expertise" className="text-sm text-muted-foreground hover:text-primary transition-colors">Automatisation Intelligente</a></li>
+                <li><a href="#rapid" className="text-sm text-muted-foreground hover:text-primary transition-colors">Framework RAPID™</a></li>
+                <li><a href="#security" className="text-sm text-muted-foreground hover:text-primary transition-colors">Gouvernance & Sécurité</a></li>
+              </ul>
+            </div>
+
+            {/* Resources */}
+            <div>
+              <h4 className="text-lg font-semibold mb-6 text-primary">{t('footer.resources.title')}</h4>
+              <ul className="space-y-3">
+                <li><a href="#podcasts" className="text-sm text-muted-foreground hover:text-primary transition-colors">AI... to be or not to be (EN)</a></li>
+                <li><a href="#podcasts" className="text-sm text-muted-foreground hover:text-primary transition-colors">Les derniers Hommes (FR)</a></li>
+                <li><a href="#" className="text-sm text-muted-foreground hover:text-primary transition-colors">Les Chroniques de l'IA (livre)</a></li>
+                <li><a href="#" className="text-sm text-muted-foreground hover:text-primary transition-colors">Blog & Actualités</a></li>
+                <li><a href="#" className="text-sm text-muted-foreground hover:text-primary transition-colors">Études de cas</a></li>
+                <li><a href="#" className="text-sm text-muted-foreground hover:text-primary transition-colors">Livre blanc RAPID</a></li>
+                <li><a href="#" className="text-sm text-muted-foreground hover:text-primary transition-colors">Toolkit gratuit</a></li>
+              </ul>
+            </div>
+
+            {/* Team */}
+            <div>
+              <h4 className="text-lg font-semibold mb-6 text-primary">{t('footer.team.title')}</h4>
+              <ul className="space-y-3">
+                <li><a href="#founders" className="text-sm text-muted-foreground hover:text-primary transition-colors">Patrick De Carvalho</a></li>
+                <li><a href="#founders" className="text-sm text-muted-foreground hover:text-primary transition-colors">Pascal Roche</a></li>
+                <li><a href="#" className="text-sm text-muted-foreground hover:text-primary transition-colors">Notre histoire</a></li>
+                <li><a href="https://cal.com/appsvelocity" className="text-sm text-muted-foreground hover:text-primary transition-colors">Prendre RDV</a></li>
+                <li><a href="#" className="text-sm text-muted-foreground hover:text-primary transition-colors">Nous rejoindre</a></li>
+              </ul>
             </div>
           </div>
         </div>
@@ -111,9 +141,15 @@ export const Footer = () => {
                 >
                   {t('footer.cgv')}
                 </button>
+                <a href="#" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                  {t('footer.privacy')}
+                </a>
+                <a href="#" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                  {t('footer.ethics')}
+                </a>
               </div>
               <div className="text-sm text-muted-foreground">
-                © {new Date().getFullYear()} {t('footer.copyright')}
+                {t('footer.copyright')}
               </div>
             </div>
           </div>
